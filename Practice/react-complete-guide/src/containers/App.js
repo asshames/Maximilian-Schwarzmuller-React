@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import classes from './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
-import WithClass from '../hoc/WithClass';
+import withClass from '../hoc/WithClass';
+import Aux from '../hoc/Auxillary';
 
 class App extends Component {
 
@@ -19,7 +20,8 @@ class App extends Component {
       { id: 'asdf11', name: 'Subir', age: 24 }
     ],
     otherState: 'some other value',
-    showPersons: false
+    showPersons: false,
+    showCockpit: true
   }
 
   static getDerivedStateFromProps(props, state) {
@@ -27,9 +29,9 @@ class App extends Component {
     return state;
   }
 
-  componentWillMount() {
-    console.log('[App.js] componentWillMount');
-  }
+  // componentWillMount() {
+  //   console.log('[App.js] componentWillMount');
+  // }
 
   componentDidMount() {
     console.log('[App.js] componentDidMount');
@@ -90,7 +92,7 @@ class App extends Component {
     }
 
     return (
-      <WithClass classes={classes.App}>
+      <Aux classes={classes.App}>
         <button
           onClick={() => {
             this.setState({ showCockpit: false });
@@ -107,10 +109,10 @@ class App extends Component {
           />
         ) : null}
         {persons}
-      </WithClass>
+      </Aux>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
   }
 }
 
-export default App;
+export default withClass(App, classes.App);
