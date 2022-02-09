@@ -7,7 +7,7 @@ import classes from './Person.css';
 import AuthContext from '../../../context/auth-context';
 
 class Person extends Component {
-    constructor(props) {
+    constructor(props) { 
         super(props);
         this.inputElementRef = React.createRef();
     }
