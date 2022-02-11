@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 import BuildControl from './BuildControl/BuildControl';
@@ -21,7 +22,13 @@ const buildControls = (props) => (
                 removed={() => props.ingredientRemoved(ctrl.type)}
                 disabled={props.disabled[ctrl.type]} />
         ))}
+        <button
+            className={classes.OrderButton}
+            disabled={!props.purchasable}>
+            ORDER NOW
+        </button>
     </div>
+    
 );
 
 export default buildControls;
