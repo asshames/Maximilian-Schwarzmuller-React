@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './Blog.css';
 import Post from '../../components/Post/Post';
 import NewPost from '../../components/NewPost/NewPost';
+import FullPost from '../../components/FullPost/FullPost';
 
 class Blog extends Component {
     render () {
@@ -12,6 +13,9 @@ class Blog extends Component {
                     <Post />
                     <Post />
                     <Post />
+                </section>
+                <section>
+                    <FullPost />
                 </section>
                 <section>
                     <NewPost />
