@@ -132,7 +132,7 @@ class BurgerBuilder extends Component{
         // {salad: true, meat: false, ...}
 
         let orderSummary = null;
-        let burger = <Spinner />
+        let burger = this.state.error ? <p>Ingredients can't be loaded!</p> : <Spinner />
         
         if (this.state.ingredients) {
             burger = (
