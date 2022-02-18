@@ -4,6 +4,7 @@ import { NavLink, Route, Switch, Redirect } from 'react-router-dom';
 
 import './Blog.css'; 
 import Posts from './Posts/Posts';
+
 import asyncComponent from '../../hoc/asyncComponent';
 // import NewPost from './NewPost/NewPost';
 
