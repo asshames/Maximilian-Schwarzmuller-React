@@ -36,6 +36,7 @@ class Posts extends Component{
     postSelectedHandler = (id) => {
         // this.setState({ selectedPostId: id });
         // this.props.history.push ({ pathname: '/posts/' + id } );
+        // this.props.history.replace ({ pathname: '/posts/' + id } );
         this.props.history.push ( '/posts/' + id );
     }
 
