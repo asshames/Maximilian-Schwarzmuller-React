@@ -1,5 +1,4 @@
 import React from "react";
-import { major } from "semver";
 import classes from './Order.module.css';
 
 const order = (props) => {
