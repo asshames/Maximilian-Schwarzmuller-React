@@ -5,11 +5,12 @@ const initialState = {
 };
 
 const reducer = ( state = initialState, action ) => {
-    switch ( action.type ) {
+    switch (action.type) {
+        //update result data
         case actionTypes.STORE_RESULT:
             return {
                 ...state,
-                results: state.results.concat({id: new Date(), value: action.result})
+                results: state.results.concat({id: new Date(), value: action.result * 2})
             }
         case actionTypes.DELETE_RESULT:
             // const id = 2;
