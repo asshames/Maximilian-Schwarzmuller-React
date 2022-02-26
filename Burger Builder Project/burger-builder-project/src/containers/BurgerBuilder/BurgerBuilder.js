@@ -9,7 +9,7 @@ import OrderSummary from "../../components/Burger/OrderSummary/OrderSummary";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 import { connect } from "react-redux";
-import * as actionTypes from "../../store/actions/actionTypes";
+import * as burgerBuilderactions from "../../store/actions/index";
 
 class BurgerBuilder extends Component{
 
@@ -116,8 +116,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onIngredientAdded: (ingName) => dispatch({ type: actionTypes.ADD_INGREDIENT, ingredientName: ingName }),
-        onIngredientRemoved: (ingName) => dispatch({ type: actionTypes.REMOVE_INGREDIENT, ingredientName: ingName })
+        onIngredientAdded: (ingName) => dispatch(burgerBuilderactions.addIngredient(ingName)),
+        onIngredientRemoved: (ingName) => dispatch(burgerBuilderactions.removeIngredient(ingName))
     };
 }
 
