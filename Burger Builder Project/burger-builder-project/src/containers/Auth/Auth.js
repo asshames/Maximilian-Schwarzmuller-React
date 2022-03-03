@@ -82,6 +82,11 @@ class Auth extends Component {
         };
         this.setState( { controls: updatedControls } );
     }
+    
+    submitHandler = ( event ) => {
+        event.preventDefault();
+        this.props.onAuth( this.state.controls.email.value, this.state.controls.password.value, this.state.isSignup );
+    }
 
     render () {
         const formElementsArray = [];
