@@ -8,9 +8,20 @@ import NavigationItem from "./NavigationItem/NavigationItem";
 
 configure({ adapter: new Adapter() });
 
-describe('<NavigationItems />', () => { 
-    it('should render two <NavigationItem /> elements if not authentications', () => { 
-        const wrapper = shallow(<NavigationItems />);
+describe('<NavigationItems />', () => {
+    let wrapper;
+
+    beforeEach(() => {
+        wrapper = shallow(<NavigationItems />)
+    });
+
+    it('should render two <NavigationItem /> elements if not authentications', () => {
         expect(wrapper.find(NavigationItem)).toHaveLength(2);
+    });
+
+    it('should render three <NavigationItem /> elements if authentications', () => { 
+        //wrapper = shallow(<NavigationItems isAuthenticated />);
+        wrapper.setProps({ isAuthenticated: true });
+        expect(wrapper.find(NavigationItem)).toHaveLength(3);
     });
 });
