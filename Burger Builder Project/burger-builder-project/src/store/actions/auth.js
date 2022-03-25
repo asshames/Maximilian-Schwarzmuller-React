@@ -32,12 +32,22 @@ export const logOut = () => {
     }
 }
 
+export const logOutSucceed = () => { 
+    return {
+        type: actionsTypes.AUTH_LOGOUT
+    }
+};
+
 export const checkAuthTimeOut = (expirationTime) => {
-    return dispatch => {
-        setTimeout(() => {
-            dispatch(logOut());
-        }, expirationTime * 1000);
-    };
+    return {
+        type: actionsTypes.AUTH_CHECKOUT_TIMEOUT,
+        expirationTime: expirationTime
+    }
+    // return dispatch => {
+    //     setTimeout(() => {
+    //         dispatch(logOut());
+    //     }, expirationTime * 1000);
+    // };
 };
 
 export const auth = (email, password, isSignup) => {
